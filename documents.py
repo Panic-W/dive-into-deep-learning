@@ -32,7 +32,21 @@ nn.Flatten() 用：将连续的维度范围展平为张量。 经常在nn.Sequen
 用于对神经网络模型的输出进行处理，得到tensor类型的数据
 '''
 
+'''
+nn.conv1d
+torch.nn.Conv1d(in_channels,       "输入图像中的通道数"
+                out_channels,      "卷积产生的通道数"
+                kernel_size,       "卷积核的大小"
+                stride,            "卷积的步幅。默认值：1"
+                padding,           "添加到输入两侧的填充。默认值：0"
+                dilation,          "内核元素之间的间距。默认值：1"
+                groups,            "从输入通道到输出通道的阻塞连接数。默认值：1"
+                bias,              "If True，向输出添加可学习的偏差。默认：True"
+                padding_mode       "'zeros', 'reflect', 'replicate' 或 'circular'. 默认：'zeros'"
+                )
 
+
+'''
 
 
 
@@ -209,9 +223,25 @@ torch.stack()
 torch.matmul是tensor的乘法，输入可以是高维的。
 '''
 
+'''
+F.pad()
+对矩阵进行填充
+http://t.csdn.cn/6Znbs
+'''
 
+'''
+作用： expand()函数可以将张量广播到新的形状。
+注意： 只能对维度值为1的维度进行扩展，无需扩展的维度，维度值不变，对应位置可写上原始维度大小或直接写作-1；
+且扩展的Tensor不会分配新的内存，只是原来的基础上创建新的视图并返回，返回的张量内存是不连续的。
+类似于numpy中的broadcast_to函数的作用。如果希望张量内存连续，可以调用contiguous函数。
 
+a = torch.tensor([1, 0, 2])     # a -> torch.Size([3])
+b1 = a.expand(2, -1)            # 第一个维度为升维，第二个维度保持原样
 
+b1为 -> torch.Size([3, 2])
+tensor([[1, 0, 2],
+        [1, 0, 2]])
+'''
 
 
 
