@@ -244,10 +244,27 @@ tensor([[1, 0, 2],
 '''
 
 
+'''
+requires_grad
+在pytorch中，tensor有一个requires_grad参数，如果设置为True，则反向传播时，该tensor就会自动求导。tensor的requires_grad的属性默认为False,若一个节点（叶子变量：自己创建的tensor）requires_grad被设置为True，那么所有依赖它的节点requires_grad都为True（即使其他相依赖的tensor的requires_grad = False）
 
+当requires_grad设置为False时,反向传播时就不会自动求导了，因此大大节约了显存或者说内存。
 
+with torch.no_grad的作用
+在该模块下，所有计算得出的tensor的requires_grad都自动设置为False。
 
+即使一个tensor（命名为x）的requires_grad = True，在with torch.no_grad计算，由x得到的新tensor（命名为w-标量）requires_grad也为False，且grad_fn也为None,即不会对w求导。
+'''
+'''
+torch.cat
+函数将两个张量（tensor）按指定维度拼接在一起，注意：除拼接维数dim数值可不同外其余维数数值需相同，方能对齐，如下面例子所示。torch.cat()函数不会新增维度，而torch.stack()函数会新增一个维度，相同的是两个都是对张量进行拼接
+'''
 
+'''
+AdaptiveAvgPool2d
+AdaptivePooling，自适应池化层。函数通过输入原始尺寸和目标尺寸，自适应地计算核的大小和每次
+移动的步长。如告诉函数原来的矩阵是7x7的尺寸，我要得到3x1的尺寸，函数就会自己计算出核多大、该怎么运动。
+'''
 
 
 
