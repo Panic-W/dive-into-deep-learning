@@ -29,7 +29,8 @@ def init_rnn_state(batch_size, num_hiddens, device):
     return (torch.zeros((batch_size, num_hiddens), device=device),)
             
 def rnn(inputs, state, params):
-    '''函数定义了如何在一个时间步内计算隐状态和输出,循环神经网络模型通过inputs最外层的维度实现循环， 以便逐时间步更新小批量数据的隐状态H。 此外，这里使用tanh函数作为激活函数。 如 :numref:sec_mlp所述， 当元素在实数上满足均匀分布时，tanh函数的平均值为0'''
+    '''函数定义了如何在一个时间步内计算隐状态和输出,循环神经网络模型通过inputs最外层的维度实现循环， 以便逐时间步更新小批量数据的隐状态H。
+      此外，这里使用tanh函数作为激活函数。 如 :numref:sec_mlp所述， 当元素在实数上满足均匀分布时，tanh函数的平均值为0'''
     # inputs的形状：(时间步数量，批量大小，词表大小)
     W_xh, W_hh, b_h, W_hq, b_q = params
     H, = state
