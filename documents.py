@@ -226,7 +226,7 @@ torch.matmul是tensor的乘法，输入可以是高维的。
 '''
 F.pad()
 对矩阵进行填充
-http://t.csdn.cn/6Znbs
+http://t.csdn.cn/Ky84K
 '''
 
 '''

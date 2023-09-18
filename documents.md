@@ -47,3 +47,11 @@ new_m.load_state_dict(m_state_dict)
 
 ### nn.LSTM
 ![2023-09-11-10-09-13.png](assets/2023-09-11-10-09-13.png)
+
+### ConvTranspose2d  
+[ConvTranspose2d原理](http://t.csdn.cn/OfuqS)  
+[反卷积torch.nn.ConvTranspose2d详解](http://t.csdn.cn/6lOoi)
+
+### pfs.logfbank()
+![](img/mk-2023-09-17-10-16-08.png)
+![](img/mk-2023-09-17-10-11-17.png)
