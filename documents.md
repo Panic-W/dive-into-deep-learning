@@ -55,3 +55,6 @@ new_m.load_state_dict(m_state_dict)
 ### pfs.logfbank()
 ![](img/mk-2023-09-17-10-16-08.png)
 ![](img/mk-2023-09-17-10-11-17.png)
+
+### 梯度裁剪
+[Pytorch梯度剪裁（clip_grad_value_与clip_grad_norm_）](http://t.csdn.cn/smJAE)

@@ -354,7 +354,7 @@ def train_seq2seq(net, data_iter, lr, num_epochs, tgt_vocab, device):
     optimizer = torch.optim.Adam(net.parameters(), lr=lr)
     loss = MaskedSoftmaxCELoss()
     net.train()
-    animator = d2l.Animator(xlabel='epoch', ylavel='loss',xlim=[10, num_epochs])
+    animator = d2l.Animator(xlabel='epoch', ylabel='loss',xlim=[10, num_epochs])
     for epoch in range(num_epochs):
         timer = d2l.Timer()
         metric = d2l.Accumulator(2)                 # # 训练损失总和，词元数量
